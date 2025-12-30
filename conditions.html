@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre 3 – Conditions (Java)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2> Java</h2>
+            <ul>
+                <li><a href="index.html" class="active">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="chapitre3.html">Input / Output</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="chapitre4.html">Méthodes</a></li>
+                <li><a href="chapitre5.html">POO</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>Chapitre 3 : Les Conditions </h1>
+
+            <!-- Définition -->
+            <section>
+                <h2>1️⃣ Qu’est-ce qu’une condition ?</h2>
+                <p>
+                    Une condition permet à un programme de <strong>prendre une décision</strong>
+                    selon une situation donnée.
+                </p>
+
+            </section>
+
+            <!-- if simple -->
+            <section>
+                <h2>2️⃣ La condition if</h2>
+
+                <pre><code>
+int age = 20;
+
+if (age >= 18) {
+    System.out.println("Vous êtes majeur");
+}
+            </code></pre>
+            </section>
+
+            <!-- if else -->
+            <section>
+                <h2>3️⃣ if / else</h2>
+
+                <pre><code>
+int note = 9;
+
+if (note >= 10) {
+    System.out.println("Admis");
+} else {
+    System.out.println("Ajourné");
+}
+            </code></pre>
+            </section>
+
+            <!-- else if -->
+            <section>
+                <h2>4️⃣ else if</h2>
+
+                <pre><code>
+int note = 14;
+
+if (note >= 16) {
+    System.out.println("Très bien");
+} else if (note >= 14) {
+    System.out.println("Bien");
+} else if (note >= 10) {
+    System.out.println("Passable");
+} else {
+    System.out.println("Insuffisant");
+}
+            </code></pre>
+            </section>
+
+            <!-- opérateurs -->
+            <section>
+                <h2>5️⃣ Opérateurs de comparaison</h2>
+
+                <table>
+                    <tr>
+                        <th>Opérateur</th>
+                        <th>Signification</th>
+                    </tr>
+                    <tr>
+                        <td>==</td>
+                        <td>Égal à</td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>Différent de</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;</td>
+                        <td>Supérieur à</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;=</td>
+                        <td>Supérieur ou égal à</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;</td>
+                        <td>Inférieur à</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;=</td>
+                        <td>Inférieur ou égal à</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- switch -->
+            <section>
+                <h2>6️⃣ La condition switch</h2>
+
+                <pre><code>
+int jour = 3;
+
+switch (jour) {
+    case 1:
+        System.out.println("Lundi");
+        break;
+    case 2:
+        System.out.println("Mardi");
+        break;
+    case 3:
+        System.out.println("Mercredi");
+        break;
+    default:
+        System.out.println("Jour invalide");
+}
+            </code></pre>
+            </section>
+
+            <!-- A retenir -->
+            <div class="note">
+                <strong>À retenir :</strong><br>
+                ✔ Les comparaisons retournent <code>true</code> ou <code>false</code><br>
+                ✔ <code>switch</code> est utile pour plusieurs cas fixes
+            </div>
+
+            <section class="exercice">
+                <h2> Exercice : Calculatrice Java (switch)</h2>
+                <div class="task">
+                    <ol>
+                        <li>Demander deux nombres</li>
+                        <li>Demander à l’utilisateur de choisir une opération :</li>
+                        <ul>
+                            <li>➕ </li>
+                            <li>➖ </li>
+                            <li>✖️ </li>
+                            <li>➗ </li>
+                        </ul>
+
+                        <li>Utiliser <strong>switch</strong> pour effectuer le calcul</li>
+                        <li>Afficher le résultat clairement</li>
+                    </ol>
+                </div>
+
+                <div class="exercice">
+                    <h3> Exemple d’exécution</h3>
+                   <pre>
+Entrez le premier nombre : 6
+Entrez le deuxième nombre : 4
+
+Choisissez une opération :
++
+-
+*
+/
+
+Donner votre choix : *
+
+
+Résultat : 24
+    </pre>
+                </div>
+
+                <div class="challenge">
+                    <h3> Défi</h3>
+                    <ul>
+                        <li>Empêcher la division par zéro</li>
+                        <li>Afficher un message si le choix est invalide</li>
+                        <li>Rendre le programme lisible et bien structuré avec les commentaires</li>
+                    </ul>
+                </div>
+            </section>
+
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
