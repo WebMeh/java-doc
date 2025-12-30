@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre 2 – Variables & Types (Java)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2> Java</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html" class="active">Variables & Types</a></li>
+                <li><a href="chapitre3.html">Conditions & Boucles</a></li>
+                <li><a href="chapitre4.html">Méthodes</a></li>
+                <li><a href="chapitre5.html">POO</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>Chapitre 2 : Variables & Types</h1>
+
+            <!-- Définition -->
+            <section>
+                <h2>1️⃣ Qu’est-ce qu’une variable ?</h2>
+                <p>
+                    Une variable est un <strong>espace mémoire</strong> qui permet de
+                    stocker une valeur (nombre, texte, etc.).
+                </p>
+
+                <pre><code>
+int age = 20;
+            </code></pre>
+
+                <ul>
+                    <li>
+                        <strong>age</strong> : est le nom de la variable
+                    </li>
+                    <li>
+                        <strong>int</strong> : est le type
+                    </li>
+                    <li>
+                        <strong>20</strong> : est la valeur
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Déclaration -->
+            <section>
+                <h2>2️⃣ Déclaration et affectation</h2>
+
+                <pre><code>
+int nombre;
+nombre = 10;
+            </code></pre>
+
+                <p>Ou en une seule ligne :</p>
+
+                <pre><code>
+int nombre = 10;
+            </code></pre>
+            </section>
+
+            <!-- Types primitifs -->
+            <section>
+                <h2>3️⃣ Types de données primitifs</h2>
+
+                <div style="display: flex; justify-content: center;">
+                    <table style="border-collapse: collapse; width: 80%; text-align: center; justify-content: center;">
+                        <tr style="border: 2px solid gray;">
+                            <th style="border: 2px solid gray;">Type</th>
+                            <th style="border: 2px solid gray;">Description</th>
+                            <th style="border: 2px solid gray;">Exemple</th>
+                        </tr>
+                        <tr style="border: 2px solid gray;">
+                            <td style="border: 2px solid gray;">int</td>
+                            <td style="border: 2px solid gray;">Nombre entier</td>
+                            <td style="border: 2px solid gray;"><code>int age = 18;</code></td>
+                        </tr>
+                        <tr style="border: 2px solid gray;">
+                            <td style="border: 2px solid gray;">double</td>
+                            <td style="border: 2px solid gray;">Nombre décimal</td>
+                            <td style="border: 2px solid gray;"><code>double prix = 19.5;</code></td>
+                        </tr>
+                        <tr style="border: 2px solid gray;">
+                            <td style="border: 2px solid gray;">char</td>
+                            <td style="border: 2px solid gray;">Caractère</td>
+                            <td style="border: 2px solid gray;"><code>char genre = 'M';</code></td>
+                        </tr>
+                        <tr style="border: 2px solid gray;">
+                            <td style="border: 2px solid gray;">boolean</td>
+                            <td style="border: 2px solid gray;">Vrai / Faux</td>
+                            <td style="border: 2px solid gray;"><code>boolean actif = true;</code></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Chaînes -->
+            <section>
+                <h2>4️⃣ Type String (texte)</h2>
+
+                <pre><code>
+String nom = "Rachid";
+String ville = "Azilal";
+            </code></pre>
+
+                <p>
+                    ⚠ <code>String</code> commence par une majuscule car c’est une classe.
+                </p>
+            </section>
+
+            <!-- Concaténation -->
+            <section>
+                <h2>5️⃣ Concaténation</h2>
+
+                <pre><code>
+String nom = "Ali";
+int age = 20;
+
+System.out.println("Nom : " + nom);
+System.out.println("Âge : " + age);
+            </code></pre>
+            </section>
+
+            <!-- Exemple complet -->
+            <section>
+                <h2>6️⃣ Exemple complet</h2>
+
+                <pre><code>
+public class Main {
+    public static void main(String[] args) {
+
+        String nom = "Sara";
+        int age = 22;
+        double moyenne = 14.5;
+        boolean admis = true;
+
+        System.out.println("Nom : " + nom);
+        System.out.println("Âge : " + age);
+        System.out.println("Moyenne : " + moyenne);
+        System.out.println("Admis : " + admis);
+    }
+}
+            </code></pre>
+            </section>
+
+            <!-- A retenir -->
+            <div class="note">
+                <strong>À retenir :</strong><br>
+                ✔ Une variable stocke une valeur<br>
+                ✔ Chaque variable a un type<br>
+                ✔ <code>String</code> sert à stocker du texte<br>
+                ✔ Le symbole <code>+</code> permet la concaténation
+            </div>
+
+            <!-- Exercices -->
+            <section class="exercice">
+
+                <h2> Exercice pratique : Fiche Élève</h2>
+
+                <p>
+                    Cet exercice vous permettra de pratiquer l’utilisation des
+                    <strong>variables</strong> et des <strong>types de données</strong> en Java.
+                </p>
+
+                <p>
+                    Écrire un programme Java qui représente la <strong>fiche d’un élève</strong>.
+                </p>
+
+                <p>Le programme doit :</p>
+                <ol>
+                    <li>Déclarer les variables suivantes :</li>
+                </ol>
+
+                <ul>
+                    <li><code>nom</code> : String</li>
+                    <li><code>prenom</code> : String</li>
+                    <li><code>age</code> : int</li>
+                    <li><code>note</code> : double</li>
+                    <li><code>genre</code> : char</li>
+                    <li><code>admis</code> : boolean</li>
+                </ul>
+
+                <p>
+                    Puis afficher le résultat sous la forme suivante :
+                </p>
+
+                <pre><code>
+----- FICHE ELEVE -----
+Nom       : Naoui
+Prénom    : Said
+Âge       : 18 ans
+Note      : 14.5
+genre      : F
+Admis     : true
+----------------------
+    </code></pre>
+
+                
+
+                
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
