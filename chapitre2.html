@@ -1,93 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Chapitre – Input / Output (Java)</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        
-        <h2> Java</h2>
-        <ul>
-            <li><a href="index.html">Introduction</a></li>
-            <li><a href="chapitre1.html">Bases Java</a></li>
-            <li><a href="chapitre2.html" class="active">Input / Output</a></li>
-            <li><a href="chapitre3.html">Variables & Types</a></li>
-            <li><a href="conditions.html">Conditions</a></li>
-            <li><a href="chapitre4.html">Méthodes</a></li>
-            <li><a href="chapitre5.html">POO</a></li>
-        </ul>
-    </aside>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
 
-    <!-- MAIN CONTENT -->
-    <main class="content">
-
-        <h1>Chapitre : Input / Output en Java</h1>
-
-        <section>
-            <h2> Objectifs</h2>
+            <h2> Java</h2>
             <ul>
-                <li>Afficher des informations à l’écran</li>
-                <li>Lire des données saisies par l’utilisateur</li>
+                <li><a href="index.html" class="active">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="chapitre3.html">Input / Output</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="chapitre4.html">Méthodes</a></li>
+                <li><a href="chapitre5.html">POO</a></li>
             </ul>
-        </section>
+        </aside>
 
-        <section>
-            <h2>1️⃣ Output : Affichage à l’écran</h2>
-            <p>
-                En Java, l’affichage à l’écran se fait avec
-                <code>System.out.println()</code>.
-            </p>
+        <!-- MAIN CONTENT -->
+        <main class="content">
 
-            <pre><code>
+            <h1>Chapitre : Input / Output en Java</h1>
+
+            <section>
+                <h2> Objectifs</h2>
+                <ul>
+                    <li>Afficher des informations à l’écran</li>
+                    <li>Lire des données saisies par l’utilisateur</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>1️⃣ Output : Affichage à l’écran</h2>
+                <p>
+                    En Java, l’affichage à l’écran se fait avec
+                    <code>System.out.println()</code>.
+                </p>
+
+                <pre><code>
 System.out.println("Bonjour Java");
 System.out.println("Bienvenue au cours");
             </code></pre>
-        </section>
+            </section>
 
-        <section>
-            <h2>2️⃣ Différence entre print et println</h2>
+            <section>
+                <h2>2️⃣ Différence entre print et println</h2>
 
-            <pre><code>
+                <pre><code>
 System.out.print("Bonjour ");
 System.out.print("Java");
             </code></pre>
 
-            <p>
-                ==> <code>print</code> n’effectue pas de retour à la ligne   <br/>
-                ==> <code>println</code> passe à la ligne automatiquement
-            </p>
-        </section>
+                <p>
+                    ==> <code>print</code> n’effectue pas de retour à la ligne <br />
+                    ==> <code>println</code> passe à la ligne automatiquement
+                </p>
+            </section>
 
-        <section>
-            <h2>3️⃣ Input : Lire des données utilisateur</h2>
-            <p>
-                Pour lire des données saisies au clavier, on utilise la classe
-                <code>Scanner</code>.
-            </p>
-        </section>
+            <section>
+                <h2>3️⃣ Input : Lire des données utilisateur</h2>
+                <p>
+                    Pour lire des données saisies au clavier, on utilise la classe
+                    <code>Scanner</code>.
+                </p>
+            </section>
 
-        <section>
-            <h2>4️⃣ Import de Scanner</h2>
+            <section>
+                <h2>4️⃣ Import de Scanner</h2>
 
-            <pre><code>
+                <pre><code>
 import java.util.Scanner;
             </code></pre>
 
-            <p>
-                Cette ligne permet d’utiliser la classe Scanner dans le programme.
-            </p>
-        </section>
+                <p>
+                    Cette ligne permet d’utiliser la classe Scanner dans le programme.
+                </p>
+            </section>
 
-        <section>
-            <h2>5️⃣ Lire une chaîne de caractères</h2>
+            <section>
+                <h2>5️⃣ Lire une chaîne de caractères</h2>
 
-            <pre><code>
+                <pre><code>
 import java.util.Scanner;
 
 public class Main {
@@ -102,30 +106,30 @@ public class Main {
     }
 }
             </code></pre>
-        </section>
+            </section>
 
-        <section>
-            <h2>6️⃣ Lire un nombre</h2>
+            <section>
+                <h2>6️⃣ Lire un nombre</h2>
 
-            <pre><code>
+                <pre><code>
 System.out.print("Entrez votre âge : ");
 int age = sc.nextInt();
 
 System.out.println("Votre âge est : " + age);
             </code></pre>
-        </section>
+            </section>
 
-        <div class="note">
-            <strong>À retenir :</strong><br>
-            ✔ <code>nextLine()</code> → texte<br>
-            ✔ <code>nextInt()</code> → entier<br>
-            ✔ <code>nextDouble()</code> → nombre décimal
-        </div>
+            <div class="note">
+                <strong>À retenir :</strong><br>
+                ✔ <code>nextLine()</code> → texte<br>
+                ✔ <code>nextInt()</code> → entier<br>
+                ✔ <code>nextDouble()</code> → nombre décimal
+            </div>
 
-        <section>
-            <h2>7️⃣ Exemple complet Input / Output</h2>
+            <section>
+                <h2>7️⃣ Exemple complet Input / Output</h2>
 
-            <pre><code>
+                <pre><code>
 import java.util.Scanner;
 
 public class Main {
@@ -143,20 +147,21 @@ public class Main {
     }
 }
             </code></pre>
-        </section>
+            </section>
 
-        <div class="exercice">
-            <h3>📝 Exercices – Input / Output</h3>
-            <ol>
-                <li>Demander le prénom et l’afficher</li>
-                <li>Demander deux nombres et afficher leur somme</li>
-                <li>Demander le nom, l’âge et la ville puis afficher un message complet</li>
-            </ol>
-        </div>
+            <div class="exercice">
+                <h3>📝 Exercices – Input / Output</h3>
+                <ol>
+                    <li>Demander le prénom et l’afficher</li>
+                    <li>Demander deux nombres et afficher leur somme</li>
+                    <li>Demander le nom, l’âge et la ville puis afficher un message complet</li>
+                </ol>
+            </div>
 
-    </main>
+        </main>
 
-</div>
+    </div>
 
 </body>
+
 </html>

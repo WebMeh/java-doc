@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre – Les Boucles (Java)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2> Java</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html" class="active">Les boucles</a></li>
+                <li><a href="chapitre4.html">Méthodes</a></li>
+                <li><a href="chapitre5.html">POO</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1> Les Boucles  </h1>
+
+            <!-- Définition -->
+            <section>
+                <h2>1️⃣ Qu’est-ce qu’une boucle ?</h2>
+                <p>
+                    Une boucle permet de <strong>répéter automatiquement</strong>
+                    un bloc de code plusieurs fois, sans le réécrire.
+                </p>
+                <p>
+                    Elle est utilisée lorsqu’une action doit être répétée
+                    selon une condition ou un nombre précis de fois.
+                </p>
+            </section>
+
+            <!-- for -->
+            <section>
+                <h2>2️⃣ La boucle for</h2>
+                <p>
+                    La boucle <strong>for</strong> est utilisée lorsque
+                    le nombre de répétitions est connu à l’avance.
+                </p>
+
+                <pre><code>
+for (int i = 0; i < 5; i++) {
+    System.out.println("Tour numéro " + i);
+}
+                </code></pre>
+            </section>
+
+            <!-- while -->
+            <section>
+                <h2>3️⃣ La boucle while</h2>
+                <p>
+                    La boucle <strong>while</strong> répète le code
+                    tant qu’une condition est vraie.
+                </p>
+
+                <pre><code>
+int compteur = 1;
+
+while (compteur <= 3) {
+    System.out.println("Compteur : " + compteur);
+    compteur=compteur+1;
+}
+                </code></pre>
+            </section>
+
+            <!-- do while -->
+            <section>
+                <h2>4️⃣ La boucle do...while</h2>
+                <p>
+                    La boucle <strong>do...while</strong> s’exécute
+                    <strong>au moins une fois</strong>, même si la condition est fausse.
+                </p>
+
+                <pre><code>
+int choix;
+
+do {
+    System.out.println("Menu affiché");
+    choix++;
+} while (choix < 1);
+                </code></pre>
+            </section>
+
+            <!-- comparaison -->
+            <section>
+                <h2>5️⃣ Comparaison  des boucles</h2>
+
+                <table>
+                    <tr>
+                        <th>Boucle</th>
+                        <th>Utilisation</th>
+                    </tr>
+                    <tr>
+                        <td>for</td>
+                        <td>Nombre de répétitions connu</td>
+                    </tr>
+                    <tr>
+                        <td>while</td>
+                        <td>Condition vérifiée avant l’exécution</td>
+                    </tr>
+                    <tr>
+                        <td>do...while</td>
+                        <td>Exécution au moins une fois</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- A retenir -->
+            <div class="note">
+                <strong>À retenir :</strong><br>
+                ✔ Une boucle évite la répétition du code<br>
+                ✔ Le choix de la boucle dépend du problème à résoudre
+            </div>
+
+            <!-- Exercice -->
+            <section class="exercice">
+                <h2> Exercice : Jeu de score (boucles)</h2>
+
+                <div class="task">
+                    <ol>
+                        <li>Initialiser un score à <strong>0</strong></li>
+                        <li>Afficher le score actuel</li>
+                        <li>Demander à l’utilisateur s’il veut continuer (O/N)</li>
+                        <li>Ajouter <strong>10 points</strong> à chaque tour</li>
+                        <li>Répéter tant que l’utilisateur répond O</li>
+                    </ol>
+                </div>
+
+                <div class="exercice">
+                    <h3> Exemple d’exécution</h3>
+                    <pre>
+Score actuel : 0
+Continuer le jeu ? (O/N) : O
+
+Score actuel : 10
+Continuer le jeu ? (O/N) : O
+
+Score actuel : 20
+Continuer le jeu ? (O/N) : N
+
+Score final : 20
+                    </pre>
+                </div>
+
+                <div class="challenge">
+                    <h3> Défi</h3>
+                    <ul>
+                        <li>Limiter le jeu à 10 tours maximum</li>
+                        <li>Afficher un message spécial si score ≥ 50</li>
+                        <li>Proposer de rejouer à la fin</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
