@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre – Tableaux (Java)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2> Java</h2>
+            <ul>
+                <li><a href="index.html" >Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="chapitre3.html">Input / Output</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html" class="active">Tableaux</a></li>
+                <li><a href="chapitre4.html">Méthodes</a></li>
+                <li><a href="chapitre5.html">POO</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1> Les Tableaux en Java </h1>
+
+            <!-- Définition -->
+            <section>
+                <h2>1️⃣ Qu’est-ce qu’un tableau ?</h2>
+                <p>
+                    Un <strong>tableau</strong> permet de stocker
+                    <strong>plusieurs valeurs</strong> du même type
+                    dans une seule variable.
+                </p>
+                <p>
+                    Chaque valeur est accessible grâce à un
+                    <strong>indice</strong> qui commence toujours par <strong>0</strong>.
+                </p>
+            </section>
+
+            <!-- Déclaration -->
+            <section>
+                <h2>2️⃣ Déclaration d’un tableau</h2>
+
+                <pre><code>
+int[] notes = new int[5];
+                </code></pre>
+            </section>
+
+            <!-- Initialisation -->
+            <section>
+                <h2>3️⃣ Initialisation d’un tableau</h2>
+
+                <pre><code>
+int[] notes = {12, 15, 9, 18, 14};
+                </code></pre>
+            </section>
+
+            <!-- Accès -->
+            <section>
+                <h2>4️⃣ Accéder aux éléments</h2>
+
+                <pre><code>
+int[] notes = {12, 15, 9};
+
+System.out.println(notes[0]); // 12
+System.out.println(notes[1]); // 15
+System.out.println(notes[2]); // 9
+                </code></pre>
+            </section>
+
+            <!-- Boucle -->
+            <section>
+                <h2>5️⃣ Parcourir un tableau avec une boucle</h2>
+
+                <pre><code>
+int[] notes = {12, 15, 9, 18};
+
+for (int i = 0; i < notes.length; i++) {
+    System.out.println(notes[i]);
+}
+                </code></pre>
+            </section>
+
+            <!-- length -->
+            <section>
+                <h2>6️⃣ La propriété length</h2>
+                <p>
+                    <code>length</code> permet de connaître
+                    le nombre d’éléments dans un tableau.
+                </p>
+
+                <pre><code>
+int taille = notes.length;
+System.out.println(taille);
+                </code></pre>
+            </section>
+
+            <!-- A retenir -->
+            <div class="note">
+                <strong>À retenir :</strong><br>
+                ✔ Les indices commencent à 0<br>
+                ✔ Tous les éléments ont le même type<br>
+                ✔ Les tableaux fonctionnent très bien avec les boucles
+            </div>
+
+            <!-- Exercice -->
+            <section class="exercice">
+                <h2>🎓 Exercice : Gestion des notes</h2>
+
+                <div class="task">
+                    <ol>
+                        <li>Créer un tableau de 5 notes</li>
+                        <li>Afficher toutes les notes</li>
+                        <li>Calculer la moyenne</li>
+                        <li>Afficher la note maximale</li>
+                    </ol>
+                </div>
+
+                <div class="exercice">
+                    <h3> Exemple d’exécution</h3>
+                    <pre>
+Notes :
+12
+15
+9
+18
+14
+
+Moyenne : 13.6
+Note maximale : 18
+                    </pre>
+                </div>
+
+                <div class="challenge">
+                    <h3> Défi</h3>
+                    <ul>
+                        <li>Compter le nombre de notes ≥ 10</li>
+                        <li>Afficher les notes inférieures à la moyenne</li>
+                        <li>Améliorer l’affichage avec des messages clairs</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
