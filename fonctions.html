@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre – Méthodes (Java)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2> Java</h2>
+            <ul>
+                <li><a href="index.html" class="active">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="chapitre3.html">Input / Output</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="chapitre5.html">POO</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1> Les Fonctions (Méthodes) en Java </h1>
+
+            <!-- Définition -->
+            <section>
+                <h2>1️⃣ Qu’est-ce qu’une méthode ?</h2>
+                <p>
+                    Une <strong>méthode</strong> est un bloc de code nommé
+                    qui permet de <strong>réaliser une tâche précise</strong>.
+                </p>
+                <p>
+                    Elle permet de rendre le programme plus <strong>clair</strong>,
+                    <strong>organisé</strong> et <strong>réutilisable</strong>.
+                </p>
+            </section>
+
+            <!-- Structure -->
+            <section>
+                <h2>2️⃣ Structure d’une méthode</h2>
+
+                <pre><code>
+typeRetour nomMethode(paramètres) {
+    // instructions
+}
+                </code></pre>
+            </section>
+
+            <!-- void -->
+            <section>
+                <h2>3️⃣ Méthode sans valeur de retour (void)</h2>
+
+                <pre><code>
+static void afficherMessage() {
+    System.out.println("Bienvenue en Java");
+}
+                </code></pre>
+            </section>
+
+            <!-- return -->
+            <section>
+                <h2>4️⃣ Méthode avec valeur de retour</h2>
+
+                <pre><code>
+static int addition(int a, int b) {
+    return a + b;
+}
+                </code></pre>
+            </section>
+
+            <!-- Appel -->
+            <section>
+                <h2>5️⃣ Appel d’une méthode</h2>
+
+                <pre><code>
+int resultat = addition(4, 6);
+System.out.println(resultat);
+                </code></pre>
+            </section>
+
+            <!-- Paramètres -->
+            <section>
+                <h2>6️⃣ Paramètres d’une méthode</h2>
+                <p>
+                    Les paramètres permettent de transmettre
+                    des valeurs à une méthode.
+                </p>
+
+                <pre><code>
+static void afficherNom(String nom) {
+    System.out.println("Bonjour " + nom);
+}
+                </code></pre>
+            </section>
+
+            <!-- Exercice -->
+            <section class="exercice">
+                <h2> Exercice : Mini boîte à outils</h2>
+
+                <div class="task">
+                    <ol>
+                        <li>Créer une méthode <code>afficherMenu()</code></li>
+                        <li>Créer une méthode <code>addition(int a, int b)</code></li>
+                        <li>Créer une méthode <code>multiplication(int a, int b)</code></li>
+                        <li>Appeler les méthodes depuis <code>main</code></li>
+                    </ol>
+                </div>
+
+                <div class="exercice">
+                    <h3> Exemple d’exécution</h3>
+                    <pre>
+1 - Addition
+2 - Multiplication
+
+Votre choix : 1
+Résultat : 12
+                    </pre>
+                </div>
+
+                <div class="challenge">
+                    <h3> Défi</h3>
+                    <ul>
+                        <li>Ajouter une méthode <code>soustraction</code></li>
+                        <li>Ajouter une méthode <code>division</code></li>
+                        <li>Répéter les instructions tant que la réponse de l’utilisateur est « O ».</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
