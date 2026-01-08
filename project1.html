@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projet 1 – Coupe d'Afrique des Nations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>🏆 CAN 2025</h2>
+            <ul>
+                <li><a href="index.html" >Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="chapitre3.html">Input / Output</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="project1.html" class="active">Mini Projet 1</a></li>
+                <li><a href="chapitre5.html">POO</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1> Projet 1 : Gestion de la Coupe d’Afrique</h1>
+
+            <section>
+                <h2> Contexte</h2>
+                <p>
+                    Vous êtes membre du comité technique de la
+                    <strong>Coupe d’Afrique des Nations</strong>.
+                    Votre mission est de développer un programme Java
+                    permettant de gérer les équipes participantes.
+                </p>
+            </section>
+
+            <section>
+                <h2> Contraintes pédagogiques</h2>
+                <ul>
+                    <li>❌ Pas de programmation orientée objet</li>
+                    <li>✅ Tableaux + fonctions uniquement</li>
+                    <li>✅ Utilisation de <code>Scanner</code></li>
+                    <li>✅ Menu interactif</li>
+                </ul>
+            </section>
+
+            <section class="exercice">
+                <h2> Données à gérer</h2>
+                <ul>
+                    <li>Nom de l’équipe</li>
+                    <li>Pays</li>
+                    <li>Nombre de points</li>
+                </ul>
+
+                <p>
+                    👉 Chaque équipe sera stockée à l’aide de
+                    <strong>tableaux parallèles</strong>.
+                <pre>
+String[] noms = new String[24];
+String[] pays = new String[24];
+int[] points = new int[24];
+                    </pre>
+                </p>
+            </section>
+
+            <section class="exercice">
+                <h2> Fonctions à développer </h2>
+
+                <ol>
+                    <li><code>ajouterEquipe()</code></li>
+                    <li><code>afficherEquipes()</code></li>
+                    <li><code>rechercherEquipe(String nom)</code></li>
+                    <li><code>modifierPoints()</code></li>
+                    <li><code>supprimerEquipe()</code></li>
+                    <li><code>menu()</code></li>
+                </ol>
+            </section>
+
+            <section class="exercice">
+                <h2> Menu attendu</h2>
+                <pre>
+1. Ajouter une équipe
+2. Afficher les équipes
+3. Modifier les points
+4. Supprimer une équipe
+0. Quitter
+                </pre>
+            </section>
+
+            <section class="challenge">
+                <h2> Défis</h2>
+                <ul>
+                    <li>Empêcher l’ajout de plus de 24 équipes</li>
+                    <li>Empêcher les points négatifs</li>
+                    <li>Afficher le classement par points</li>
+                    <li>Répéter le menu tant que l’utilisateur ne quitte pas</li>
+                </ul>
+            </section>
+
+            <div class="note">
+                <strong>💡 Astuce :</strong><br>
+                Ce projet sera refactorisé plus tard en version
+                <strong>POO</strong> avec une classe <code>Equipe</code>.
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
