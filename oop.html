@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre – POO (Java)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="project1.html">Mini Projet 1</a></li>
+                <li><a href="oop.html" class="active">POO</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1> Programmation Orientée Objet (POO) en Java </h1>
+
+            <!-- Définition -->
+            <section>
+                <h2>1️⃣ Qu’est-ce que la POO ?</h2>
+                <p>
+                    La <strong>Programmation Orientée Objet (POO)</strong>
+                    est une manière de programmer basée sur des
+                    <strong>objets</strong> représentant des éléments du monde réel.
+                </p>
+                <p>
+                    En Java, tout est basé sur les <strong>classes</strong> et les <strong>objets</strong>.
+                </p>
+            </section>
+
+            <!-- Classe -->
+            <section>
+                <h2>2️⃣ La notion de classe</h2>
+                <p>
+                    Une <strong>classe</strong> est un modèle (plan)
+                    qui décrit un objet.
+                </p>
+
+                <pre><code>
+class Etudiant {
+    String nom;
+    int age;
+}
+                </code></pre>
+            </section>
+
+            <!-- Objet -->
+            <section>
+                <h2>3️⃣ La notion d’objet</h2>
+                <p>
+                    Un <strong>objet</strong> est une instance d’une classe.
+                </p>
+
+                <pre><code>
+Etudiant e1 = new Etudiant();
+e1.nom = "Ali";
+e1.age = 18;
+                </code></pre>
+            </section>
+
+            <!-- Attributs -->
+            <section>
+                <h2>4️⃣ Les attributs</h2>
+                <p>
+                    Les <strong>attributs</strong> sont des variables
+                    qui décrivent les caractéristiques d’un objet.
+                </p>
+
+                <pre><code>
+class Voiture {
+    String marque;
+    int vitesse;
+}
+                </code></pre>
+            </section>
+
+            <!-- Méthodes -->
+            <section>
+                <h2>5️⃣ Les méthodes dans une classe</h2>
+                <p>
+                    Une méthode définit le <strong>comportement</strong> d’un objet.
+                </p>
+
+                <pre><code>
+class Voiture {
+    String marque;
+    int vitesse;
+
+    void accelerer() {
+        vitesse = vitesse + 10;
+    }
+}
+                </code></pre>
+            </section>
+
+            <!-- Constructeur -->
+            <section>
+                <h2>6️⃣ Le constructeur</h2>
+                <p>
+                    Le <strong>constructeur</strong> permet
+                    d’initialiser un objet lors de sa création.
+                </p>
+
+                <pre><code>
+class Etudiant {
+    String nom;
+    int age;
+
+    Etudiant(String n, int a) {
+        nom = n;
+        age = a;
+    }
+}
+                </code></pre>
+            </section>
+
+            <!-- Utilisation -->
+            <section>
+                <h2>7️⃣ Utilisation d’une classe (main)</h2>
+
+                <pre><code>
+public class Main {
+    public static void main(String[] args) {
+        Etudiant e1 = new Etudiant("Sara", 19);
+        System.out.println(e1.nom);
+        System.out.println(e1.age);
+    }
+}
+                </code></pre>
+            </section>
+
+            <!-- Exercice -->
+            <section class="exercice">
+                <h2> Exercice : Gestion d’un élève</h2>
+
+                <div class="task">
+                    <ol>
+                        <li>Créer une classe <code>Eleve</code></li>
+                        <li>Ajouter les attributs <code>nom</code> et <code>note</code></li>
+                        <li>Créer un constructeur</li>
+                        <li>Créer une méthode <code>afficherInfo()</code></li>
+                        <li>Tester la classe dans <code>main</code></li>
+                    </ol>
+                </div>
+
+                <div class="exercice">
+                    <h3> Exemple d’exécution</h3>
+                    <pre>
+Nom : Ahmed
+Note : 15
+                    </pre>
+                </div>
+
+                <div class="challenge">
+                    <h3> Défi</h3>
+                    <ul>
+                        <li>Ajouter une méthode <code>estAdmis()</code></li>
+                        <li>Retourner "Admis" si note ≥ 10</li>
+                        <li>Retourner "Ajourné" sinon</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
