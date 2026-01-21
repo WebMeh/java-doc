@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GUI Swing – JFrame</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="oop.html">POO</a></li>
+
+                <!-- DROPDOWN GUI SWING -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing-jframe.html" class="active">JFrame (Fenêtre)</a></li>
+                        <li><a href="swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing-label-textfield.html">JLabel & JTextField</a></li>
+                        <li><a href="swing-button.html">JButton</a></li>
+                        <li><a href="swing-events.html">Événements</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-dialog.html">JOptionPane</a></li>
+                        <li><a href="swing-login.html">Mini Projet : Login</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="project1.html">Mini Projet 1</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>JFrame – La fenêtre principale</h1>
+
+            <p>
+                <strong>JFrame</strong> est le composant principal de Swing.
+                Il représente la fenêtre de l’application graphique.
+                Toute application Swing commence par une fenêtre.
+            </p>
+
+            <h2>Objectif de ce chapitre</h2>
+            <ul>
+                <li>Comprendre le rôle de <code>JFrame</code></li>
+                <li>Savoir créer une fenêtre Swing</li>
+                <li>Connaître les propriétés essentielles d’une fenêtre</li>
+                <li>Afficher correctement une application graphique</li>
+            </ul>
+
+            <h2>Qu’est-ce qu’un JFrame ?</h2>
+            <p>
+                Un <code style="font-weight: bolder; color: blue;">JFrame</code> est une fenêtre avec une barre de <span style="color: tomato; font-weight: bolder;">titre</span>,
+                des boutons (<span style="color: tomato; font-weight: bolder;">réduire</span>, <span style="color: tomato; font-weight: bolder;">agrandir</span>, <span style="color: tomato; font-weight: bolder;">fermer</span>) et une zone de travail
+                dans laquelle on place <span style="color: tomato; font-weight: bolder;">les composants graphiques.</span>
+            </p>
+
+            <h2>Création d’une fenêtre :</h2>
+
+            <pre><code>
+import javax.swing.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("Azicode62 App");
+
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+            </code></pre>
+
+            <h2>Propriétés essentielles d’un JFrame</h2>
+
+            <table>
+                <tr>
+                    <th>Propriété / Méthode</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><code>setTitle(String)</code></td>
+                    <td>Définit le titre de la fenêtre</td>
+                </tr>
+                <tr>
+                    <td><code>setSize(int, int)</code></td>
+                    <td>Définit la largeur et la hauteur</td>
+                </tr>
+                <tr>
+                    <td><code>setLocationRelativeTo(null)</code></td>
+                    <td>Centre la fenêtre à l’écran</td>
+                </tr>
+                <tr>
+                    <td><code>setResizable(boolean)</code></td>
+                    <td>Autorise ou non le redimensionnement</td>
+                </tr>
+                <tr>
+                    <td><code>setDefaultCloseOperation()</code></td>
+                    <td>Définit l’action à la fermeture</td>
+                </tr>
+                <tr>
+                    <td><code>setVisible(boolean)</code></td>
+                    <td>Affiche ou masque la fenêtre</td>
+                </tr>
+            </table>
+
+            <h2>Exemple :</h2>
+
+            <pre><code>
+JFrame frame = new JFrame();
+frame.setTitle("Application Azicode62");
+frame.setSize(500, 400);
+frame.setLocationRelativeTo(null);
+frame.setResizable(false);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+frame.setVisible(true);
+            </code></pre>
+
+            <div class="note">
+                <strong>À retenir :</strong>
+                Sans <code>setVisible(true)</code>, la fenêtre ne s’affiche jamais.
+                La classe <code>JFrame</code> est toujours le point de départ d’une GUI Swing.
+            </div>
+
+            <div class="exercice">
+                <h3>Exercice</h3>
+                <ol>
+                    <li>Créer une fenêtre avec le titre « Gestion Étudiants »</li>
+                    <li>Mettre la taille à 600 × 400</li>
+                    <li>Centrer la fenêtre à l’écran</li>
+                    <li>Empêcher le redimensionnement</li>
+                </ol>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

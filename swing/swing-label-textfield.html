@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GUI Swing – JLabel & JTextField</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="oop.html">POO</a></li>
+
+                <!-- DROPDOWN GUI SWING -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing-jframe.html">JFrame (Fenêtre)</a></li>
+                        <li><a href="swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing-label-textfield.html" class="active">JLabel & JTextField</a></li>
+                        <li><a href="swing-button.html">JButton</a></li>
+                        <li><a href="swing-events.html">Événements</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-dialog.html">JOptionPane</a></li>
+                        <li><a href="swing-login.html">Mini Projet : Login</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="project1.html">Mini Projet 1</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>JLabel & JTextField – Composants de base</h1>
+
+            <p>
+                Les composants <strong>JLabel</strong> et <strong>JTextField</strong> sont utilisés pour 
+                afficher du texte et permettre la saisie utilisateur dans une interface Swing.
+            </p>
+
+            <h2>1️⃣ JLabel</h2>
+            <p>
+                <code>JLabel</code> sert à afficher du texte <span style="font-weight: bolder; text-decoration: underline; color: blue;">non modifiable</span>. Il peut aussi afficher <span style="font-weight: bolder; text-decoration: underline; color: blue;">des images.</span>
+            </p>
+
+            <h3>Propriétés essentielles :</h3>
+            <table>
+                <tr>
+                    <th>Propriété</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>Le texte affiché par le label</td>
+                </tr>
+                <tr>
+                    <td>foreground</td>
+                    <td>Couleur du texte (<code>setForeground(Color)</code>)</td>
+                </tr>
+                <tr>
+                    <td>font</td>
+                    <td>Police du texte (<code>setFont(new Font("Arial", Font.BOLD, 14))</code>)</td>
+                </tr>
+                <tr>
+                    <td>horizontalAlignment</td>
+                    <td>Alignement horizontal du texte (<code>SwingConstants.LEFT / CENTER / RIGHT</code>)</td>
+                </tr>
+            </table>
+
+            <h2>2️⃣ JTextField</h2>
+            <p>
+                <code>JTextField</code> permet à l’utilisateur de saisir du texte sur une seule ligne.
+            </p>
+
+            <h3>Propriétés essentielles :</h3>
+            <table>
+                <tr>
+                    <th>Propriété</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>Le texte initial du champ (<code>getText() / setText()</code>)</td>
+                </tr>
+                <tr>
+                    <td>columns</td>
+                    <td>Nombre de colonnes pour déterminer la largeur</td>
+                </tr>
+                <tr>
+                    <td>editable</td>
+                    <td>Si le texte peut être modifié (<code>true / false</code>)</td>
+                </tr>
+                <tr>
+                    <td>foreground / background</td>
+                    <td>Couleur du texte et du fond (<code>setForeground(Color)</code>, <code>setBackground(Color)</code>)</td>
+                </tr>
+            </table>
+
+            <h2>Exemple pratique – Petit formulaire</h2>
+            <pre><code>
+import javax.swing.*;
+import java.awt.*;
+
+public class FormExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Formulaire simple");
+        frame.setSize(400, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
+
+        // JLabel et JTextField
+        JLabel labelName = new JLabel("Nom :");
+        JTextField textName = new JTextField(15);
+
+        JLabel labelEmail = new JLabel("Email :");
+        JTextField textEmail = new JTextField(15);
+
+        // Ajouter au frame
+        frame.add(labelName);
+        frame.add(textName);
+        frame.add(labelEmail);
+        frame.add(textEmail);
+
+        frame.setVisible(true);
+    }
+}
+            </code></pre>
+
+            <div class="note">
+                <strong>À retenir :</strong> 
+                <code>JLabel</code> sert à afficher du texte ou une image, tandis que 
+                <code>JTextField</code> permet de saisir du texte. Utilisez les propriétés 
+                pour personnaliser l'apparence.
+            </div>
+
+            <div class="exercice">
+                <h3>Exercice</h3>
+                <ol>
+                    <li>Créer un <code>JFrame</code> avec un layout simple (<code>FlowLayout</code> ou <code>GridLayout</code>).</li>
+                    <li>Ajouter 2 <code>JLabel</code> : "Nom" et "Prénom".</li>
+                    <li>Ajouter 2 <code>JTextField</code> correspondants (15 colonnes chacun).</li>
+                    <li>Modifier la couleur du texte et du fond de chaque champ texte.</li>
+                    <li>Modifier la police et l’alignement du texte des labels.</li>
+                </ol>
+                <p>💡 Astuce : utilisez <code>frame.setLayout(new FlowLayout())</code> pour que tous les composants soient visibles correctement.</p>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

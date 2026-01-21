@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GUI Swing – JPanel</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="oop.html">POO</a></li>
+
+                <!-- DROPDOWN GUI SWING -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing-jframe.html">JFrame (Fenêtre)</a></li>
+                        <li><a href="swing-jpanel.html" class="active">JPanel</a></li>
+                        <li><a href="swing-label-textfield.html">JLabel & JTextField</a></li>
+                        <li><a href="swing-button.html">JButton</a></li>
+                        <li><a href="swing-events.html">Événements</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-dialog.html">JOptionPane</a></li>
+                        <li><a href="swing-login.html">Mini Projet : Login</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="project1.html">Mini Projet 1</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>JPanel – Organiser l’interface graphique</h1>
+
+            <p>
+                <strong>JPanel</strong> est un conteneur Swing qui permet
+                d’organiser et de regrouper les composants graphiques
+                à l’intérieur d’une fenêtre.
+            </p>
+
+
+            <h2>Pourquoi utiliser JPanel ?</h2>
+            <p>
+                Ajouter directement des composants dans un <code>JFrame</code>
+                n’est pas une bonne pratique.
+                <strong>JPanel permet de structurer l’interface</strong>
+                et de mieux organiser le code.
+            </p>
+
+            <ul>
+                <li>Organisation claire de l’interface</li>
+                <li>Facilité d’ajout de composants</li>
+            </ul>
+
+            <h2>Création d’un JPanel :</h2>
+
+            <pre><code>
+import javax.swing.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("Exemple JPanel");
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+
+        frame.add(panel);
+        frame.setVisible(true);
+    }
+}
+            </code></pre>
+
+            <ul>
+                <li><code style="color: blue; font-weight: bolder;">new JPanel()</code> : crée un conteneur.</li>
+                <li><code style="color: blue; font-weight: bolder;">panel.add()</code> : ajoute des composants.</li>
+                <li><code style="color: blue; font-weight: bolder;">frame.add(panel)</code> : ajoute le panel à la
+                    fenêtre.</li>
+            </ul>
+
+            <h2>Ajouter des composants dans un JPanel</h2>
+
+            <pre><code>
+JPanel panel = new JPanel();
+
+JButton btn1 = new JButton("OK");
+JButton btn2 = new JButton("Annuler");
+
+panel.add(btn1);
+panel.add(btn2);
+            </code></pre>
+
+            <p>
+                Par défaut, <code>JPanel</code> utilise
+                <strong>FlowLayout</strong> :
+                les composants sont placés de gauche à droite.
+            </p>
+
+            <h2>Propriétés importantes de JPanel</h2>
+
+            <table>
+                <tr>
+                    <th>Méthode</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><code>add(Component)</code></td>
+                    <td>Ajoute un composant au panel</td>
+                </tr>
+                <tr>
+                    <td><code>setLayout(LayoutManager)</code></td>
+                    <td>Définit le mode d’organisation</td>
+                </tr>
+                <tr>
+                    <td><code>setBackground(Color)</code></td>
+                    <td>Change la couleur du fond</td>
+                </tr>
+            </table>
+
+            <h2>Exemple complet</h2>
+
+            <pre><code>
+JFrame frame = new JFrame("Panel Exemple");
+frame.setSize(400, 200);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+JPanel panel = new JPanel();
+
+panel.add(new JLabel("Nom :"));
+panel.add(new JTextField(10));
+panel.add(new JButton("Valider"));
+
+frame.add(panel);
+frame.setVisible(true);
+            </code></pre>
+
+            <div class="note">
+                <strong>À retenir :</strong>
+                Un <code>JFrame</code> contient des <code>JPanel</code>,
+                et les <code>JPanel</code> contiennent les composants.
+            </div>
+
+            <div class="exercice">
+                <h3>Exercice </h3>
+                <p>Objectif : créer plusieurs <code>JPanel</code> avec des couleurs différentes et ajouter des boutons
+                    personnalisés.</p>
+                <ol>
+                    <li>Créer une fenêtre <code>JFrame</code> de taille 500x400.</li>
+                    <li>Ajouter <strong>2 JPanel</strong> à la fenêtre, chacun avec un <code>setBackground(Color)</code>
+                        différent.</li>
+                    <li>Dans chaque <code>JPanel</code>, ajouter 2 boutons <code>JButton</code> avec un texte différent
+                        pour chacun.</li>
+                    <li>Utiliser un layout simple (<code>FlowLayout</code> ou <code>GridLayout</code>) pour organiser
+                        les boutons dans chaque panel.</li>
+                    <li>Rendre la fenêtre visible avec <code>setVisible(true)</code>.</li>
+                </ol>
+                <p>💡 <strong>Astuce :</strong> Pour que vos panels s’affichent correctement dans la fenêtre, pensez à
+                    définir un layout pour la <code>JFrame</code>, par exemple :</p>
+                <pre><code>frame.setLayout(new GridLayout(2, 1));</code></pre>
+                <p>Cette ligne permet de placer les deux panels l’un au-dessus de l’autre.</p>
+            </div>
+
+            <div class="" style="margin-top: 15px;">
+                <img style="width: 400px; height: 500px;" src="../assets/jpanel-image.png" alt="">
+            </div>
+
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
