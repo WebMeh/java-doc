@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java pour Débutants - Swing Events</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="../chapitre1.html">Bases Java</a></li>
+                <li><a href="../chapitre2.html">Input / Output</a></li>
+                <li><a href="../chapitre3.html">Variables & Types</a></li>
+                <li><a href="../conditions.html">Conditions</a></li>
+                <li><a href="../boucles.html">Les boucles</a></li>
+                <li><a href="../tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="../oop.html">POO</a></li>
+
+                <!-- Dropdown GUI Swing -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing-jframe.html">JFrame (Fenêtre)</a></li>
+                        <li><a href="swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing-label-textfield.html">JLabel & JTextField</a></li>
+                        <li><a href="swing-button.html">JButton</a></li>
+                        <li><a href="swing-events.html" class="active">Événements</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-dialog.html">JOptionPane</a></li>
+                        <li><a href="swing-login.html">Mini Projet : Login</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>Événements Swing</h1>
+
+            <p>
+                En Java Swing, un <strong>événement</strong> est une action déclenchée par
+                l’utilisateur ou le système, comme cliquer sur un bouton, taper au clavier
+                ou fermer une fenêtre.
+            </p>
+
+            <h2>1️⃣ Les composants générant des événements</h2>
+            <ul>
+                <li><strong>JButton</strong> → clic sur le bouton</li>
+                <li><strong>JTextField</strong> → entrée de texte + touche Entrée</li>
+                <li><strong>JCheckBox</strong> → sélection / désélection</li>
+                <li><strong>JRadioButton</strong> → sélection d’option</li>
+                <li><strong>JComboBox</strong> → choix dans une liste déroulante</li>
+            </ul>
+
+            <h2>2️⃣ L’interface ActionListener</h2>
+            <p>
+                Pour gérer un événement de clic sur un bouton, on utilise l’interface
+                <code>ActionListener</code>. Elle possède une seule méthode :
+            </p>
+
+            <pre><code>void actionPerformed(ActionEvent e)</code></pre>
+
+            <p>Exemple simple :</p>
+
+            <pre><code>import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+JFrame frame = new JFrame("Exemple ActionListener");
+frame.setSize(300, 200);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+frame.setLayout(new FlowLayout());
+
+JButton btnClick = new JButton("Cliquez-moi");
+
+// Ajouter un ActionListener
+btnClick.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JOptionPane.showMessageDialog(frame, "Vous avez cliqué sur le bouton !");
+    }
+});
+
+frame.add(btnClick);
+frame.setVisible(true);
+</code></pre>
+
+            <h2>3️⃣ Tableau récapitulatif des événements</h2>
+            <table>
+                <tr>
+                    <th>Composant</th>
+                    <th>Événement</th>
+                    <th>Interface</th>
+                </tr>
+                <tr>
+                    <td>JButton</td>
+                    <td>Clic</td>
+                    <td>ActionListener</td>
+                </tr>
+                <tr>
+                    <td>JTextField</td>
+                    <td>Entrée texte + Enter</td>
+                    <td>ActionListener</td>
+                </tr>
+                <tr>
+                    <td>JCheckBox</td>
+                    <td>Check / Uncheck</td>
+                    <td>ItemListener</td>
+                </tr>
+                <tr>
+                    <td>JRadioButton</td>
+                    <td>Sélection</td>
+                    <td>ItemListener</td>
+                </tr>
+                <tr>
+                    <td>JComboBox</td>
+                    <td>Choix dans la liste</td>
+                    <td>ActionListener</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <strong>À retenir :</strong> Pour chaque événement, il faut :
+                <ol>
+                    <li>Choisir le composant</li>
+                    <li>Implémenter l’interface correspondante</li>
+                    <li>Écrire la méthode qui sera exécutée</li>
+                    <li>Attacher le listener au composant</li>
+                </ol>
+            </div>
+
+            <div class="exercice">
+                <h3>Exercice d'application :</h3>
+                <ol>
+                    <li>Créer une fenêtre <code>JFrame</code> de taille 300x200</li>
+                    <li>Ajouter un <code>JButton</code> intitulé "Cliquez-moi"</li>
+                    <li>Ajouter un <code>ActionListener</code> au bouton</li>
+                    <li>Dans <code>actionPerformed</code>, afficher un message avec
+                        <code>JOptionPane.showMessageDialog</code> indiquant
+                        "Vous avez cliqué sur le bouton !"</li>
+                    <li>Tester le bouton plusieurs fois</li>
+                </ol>
+                <p>💡 Astuce : utilisez un <code>FlowLayout</code> pour centrer le bouton dans la fenêtre.</p>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

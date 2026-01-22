@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GUI Swing – JButton</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="../chapitre1.html">Bases Java</a></li>
+                <li><a href="../chapitre2.html">Input / Output</a></li>
+                <li><a href="../chapitre3.html">Variables & Types</a></li>
+                <li><a href="../conditions.html">Conditions</a></li>
+                <li><a href="../boucles.html">Les boucles</a></li>
+                <li><a href="../tableaux.html">Tableaux</a></li>
+                <li><a href="../fonctions.html">Méthodes</a></li>
+                <li><a href="../oop.html">POO</a></li>
+
+                <!-- DROPDOWN GUI SWING -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing-jframe.html">JFrame (Fenêtre)</a></li>
+                        <li><a href="swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing-label-textfield.html">JLabel & JTextField</a></li>
+                        <li><a href="swing-button.html" class="active">JButton</a></li>
+                        <li><a href="swing-checkbox-radio.html">JCheckBox & JRadioButton</a></li>
+                        <li><a href="swing-events.html">Événements</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-dialog.html">JOptionPane</a></li>
+                        <li><a href="swing-login.html">Mini Projet : Login</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="project1.html">Mini Projet 1</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>JButton – Les boutons en Swing</h1>
+
+            <p>
+                <code>JButton</code> est un composant graphique qui permet à l’utilisateur
+                d’effectuer une action en cliquant sur un bouton.
+            </p>
+
+            <h2>Créer un JButton</h2>
+            <pre><code>
+JButton btn = new JButton("Cliquez ici");
+            </code></pre>
+
+            <h2>Propriétés essentielles de JButton</h2>
+            <table>
+                <tr>
+                    <th>Propriété</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>Texte affiché sur le bouton</td>
+                </tr>
+                <tr>
+                    <td>enabled</td>
+                    <td>Active ou désactive le bouton (<code>true / false</code>)</td>
+                </tr>
+                <tr>
+                    <td>background</td>
+                    <td>Couleur du fond du bouton</td>
+                </tr>
+                <tr>
+                    <td>foreground</td>
+                    <td>Couleur du texte</td>
+                </tr>
+                <tr>
+                    <td>font</td>
+                    <td>Police du texte</td>
+                </tr>
+                <tr>
+                    <td>toolTipText</td>
+                    <td>Message affiché au survol du bouton</td>
+                </tr>
+            </table>
+
+            <h2>Exemple simple</h2>
+            <pre><code>
+import javax.swing.*;
+import java.awt.*;
+
+public class ButtonExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Exemple JButton");
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
+
+        JButton button = new JButton("Valider");
+        button.setBackground(Color.GREEN);
+        button.setForeground(Color.WHITE);
+        button.setFont(new Font("Arial", Font.BOLD, 14));
+        button.setToolTipText("Cliquez pour valider");
+
+        frame.add(button);
+        frame.setVisible(true);
+    }
+}
+            </code></pre>
+
+            <div class="note">
+                <strong>À retenir :</strong>
+                Un <code>JButton</code> déclenche généralement une action lorsqu’on clique dessus.
+                La gestion du clic sera vue dans le chapitre <strong>Événements</strong>.
+            </div>
+
+            <div class="exercice">
+                <h3> Exercice d'application: </h3>
+
+
+                <ol>
+                    <li>
+                        Créer une fenêtre <code>JFrame</code> intitulée
+                        <strong>"Panneau de contrôle"</strong> avec une taille
+                        <code>600 x 400</code>.
+                    </li>
+
+                    <li>
+                        Définir un <code>FlowLayout</code> pour la fenêtre
+                        afin de placer les panneaux l’un sous l’autre.
+                        <pre><code>frame.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 10));</code></pre>
+                    </li>
+
+                    <li>
+                        Créer un <code>JPanel</code> nommé <strong>menuPanel</strong> :
+                        <ul>
+                            <li>Définir sa taille avec : <br />
+                                <pre> <code>setPreferredSize(new Dimension(560, 60));</code></pre>
+                            </li>
+                            <li>Changer la couleur de fond</li>
+                            <li>
+                                Ajouter un espace intérieur avec :
+                                <pre><code>menuPanel.setBorder(new EmptyBorder(10, 10, 10, 10));</code></pre>
+                            </li>
+                            <li>Ajouter un <code>JLabel</code> avec le texte <strong>"MENU"</strong>.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Créer un deuxième <code>JPanel</code> nommé <strong>panelButtons</strong> :
+                        <ul>
+                            <li>Utiliser un <code>GridLayout(2, 2, 15, 15).</code></li>
+                            <li>Définir sa taille avec <code>setPreferredSize(new Dimension(560, 260)).</code></li>
+                            <li>
+                                Ajouter un espace intérieur avec :
+                                <pre><code>panelButtons.setBorder(new EmptyBorder(20, 20, 20, 20));</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Dans <strong>panelButtons</strong>, créer et ajouter
+                        <strong>4 boutons</strong> :
+                        <ul>
+                            <li>Ajouter</li>
+                            <li>Modifier</li>
+                            <li>Supprimer</li>
+                            <li>Quitter</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Pour chaque <code>JButton</code> :
+                        <ul>
+                            <li>Changer la couleur de fond.</li>
+                            <li>Changer la couleur du texte.</li>
+                            <li>
+                                Ajouter un espace intérieur (padding) avec :
+                                <pre><code>bouton.setMargin(new Insets(10, 20, 10, 20));</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Ajouter les deux panels (<code>menuPanel</code> puis
+                        <code>panelButtons</code>) à la fenêtre.
+                    </li>
+
+                    <li>
+                        Afficher la fenêtre avec <code>setVisible(true)</code>.
+                    </li>
+                </ol>
+
+
+
+                <p>Chaque <code>JPanel</code> a un rôle précis :</p>
+                <ul>
+                    <li><strong>menuPanel</strong> : zone du titre.</li>
+                    <li><strong>panelButtons</strong> : zone des boutons.</li>
+                </ul>
+
+            </div>
+            <div class="" style="display: flex; justify-content: center;">
+                <div>
+                    <img width="600" height="400" src="../assets/buttons-exercice.png" alt="exercice buttons">
+                </div>
+            </div>
+
+
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

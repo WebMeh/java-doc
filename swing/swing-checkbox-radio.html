@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java pour Débutants - JCheckBox et JRadioButton</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="oop.html">POO</a></li>
+
+                <!-- Dropdown GUI Swing -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing-jframe.html">JFrame (Fenêtre)</a></li>
+                        <li><a href="swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing-label-textfield.html">JLabel & JTextField</a></li>
+                        <li><a href="swing-button.html">JButton</a></li>
+                        <li><a href="swing-checkbox-radio.html" class="active">JCheckBox & JRadioButton</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-dialog.html">JOptionPane</a></li>
+                        <li><a href="swing-login.html">Mini Projet : Login</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>JCheckBox et JRadioButton</h1>
+
+            <p>
+                En Java Swing, <strong>JCheckBox</strong> et <strong>JRadioButton</strong> permettent à
+                l’utilisateur de sélectionner des options dans une interface graphique.
+            </p>
+
+            <h2>1️⃣ JCheckBox</h2>
+            <ul>
+                <li>Permet de sélectionner ou désélectionner une option.</li>
+                <li>Peut être utilisé seul ou en groupe.</li>
+                <li>Propriétés essentielles :
+                    <ul>
+                        <li><code>setText(String)</code> : définit le texte affiché.</li>
+                        <li><code>setSelected(boolean)</code> : coche ou décoche la case.</li>
+                        <li><code>isSelected()</code> : retourne si la case est cochée.</li>
+                        <li><code>setBackground(Color)</code> : couleur de fond.</li>
+                        <li><code>setForeground(Color)</code> : couleur du texte.</li>
+                        <li><code>setEnabled(boolean)</code> : active ou désactive le composant.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Exemple :</strong></p>
+            <pre><code>JCheckBox cb1 = new JCheckBox("Option 1");
+cb1.setSelected(false);
+cb1.setBackground(Color.LIGHT_GRAY);
+cb1.setForeground(Color.BLACK);</code></pre>
+
+            <h2>2️⃣ JRadioButton</h2>
+            <ul>
+                <li>Permet de sélectionner une seule option dans un groupe.</li>
+                <li>Pour rendre les boutons exclusifs, on utilise <code>ButtonGroup</code>.</li>
+                <li>Propriétés essentielles :
+                    <ul>
+                        <li><code>setText(String)</code> : texte affiché</li>
+                        <li><code>setSelected(boolean)</code> : sélectionné par défaut ou non</li>
+                        <li><code>isSelected()</code> : savoir si le bouton est sélectionné</li>
+                        <li><code>setBackground(Color)</code> : couleur de fond</li>
+                        <li><code>setForeground(Color)</code> : couleur du texte</li>
+                        <li><code>setEnabled(boolean)</code> : activer ou désactiver le bouton</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Exemple :</strong></p>
+            <pre><code>JRadioButton rb1 = new JRadioButton("Masculin");
+JRadioButton rb2 = new JRadioButton("Féminin");
+
+ButtonGroup group = new ButtonGroup();
+group.add(rb1);
+group.add(rb2);
+
+rb1.setSelected(true);
+rb2.setSelected(false);</code></pre>
+
+            <h2>3️⃣ Tableau récapitulatif</h2>
+            <table>
+                <tr>
+                    <th>Composant</th>
+                    <th>Description</th>
+                    <th>Propriétés essentielles</th>
+                </tr>
+                <tr>
+                    <td>JCheckBox</td>
+                    <td>Case à cocher (sélection multiple possible)</td>
+                    <td>setText, setSelected, isSelected, setBackground, setForeground, setEnabled</td>
+                </tr>
+                <tr>
+                    <td>JRadioButton</td>
+                    <td>Bouton radio (sélection exclusive dans un groupe)</td>
+                    <td>setText, setSelected, isSelected, setBackground, setForeground, setEnabled, ButtonGroup</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <strong>À retenir :</strong>
+                <ul>
+                    <li>JCheckBox permet de cocher/décocher une option.</li>
+                    <li>JRadioButton permet de choisir une seule option parmi un groupe.</li>
+                    <li>Les propriétés principales sont liées au texte, à la sélection, aux couleurs et à l’état activé/désactivé.</li>
+                </ul>
+            </div>
+
+            <div class="exercice">
+                <h3> Exercice d'application: </h3>
+                <ol>
+                    <li>Créer une fenêtre <code>JFrame</code> de taille 400x250.</li>
+                    <li>Ajouter 3 <code>JCheckBox</code> avec les textes : "Conditions", "Plitique", "Règles".</li>
+                    <li>Ajouter 2 <code>JRadioButton</code> : "Marocain(e)", "Autre".</li>
+                    <li>Modifier la couleur de fond et du texte pour chaque composant.</li>
+                    <li>Définir l’état sélectionné par défaut avec <code>setSelected(true/false)</code>.</li>
+                    <li>Organiser les composants dans un <code>JPanel</code> avec <code>FlowLayout</code>.</li>
+                </ol>
+                <p>💡 Astuce : utilisez <code>setPreferredSize()</code> pour donner des dimensions aux panels et <code>setBorder(new EmptyBorder(...))</code> pour espacer les composants.</p>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
