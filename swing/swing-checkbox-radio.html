@@ -127,21 +127,72 @@ rb2.setSelected(false);</code></pre>
                 <ul>
                     <li>JCheckBox permet de cocher/décocher une option.</li>
                     <li>JRadioButton permet de choisir une seule option parmi un groupe.</li>
-                    <li>Les propriétés principales sont liées au texte, à la sélection, aux couleurs et à l’état activé/désactivé.</li>
+                    <li>Les propriétés principales sont liées au texte, à la sélection, aux couleurs et à l’état
+                        activé/désactivé.</li>
                 </ul>
             </div>
 
             <div class="exercice">
-                <h3> Exercice d'application: </h3>
+                <h3>Exercice d'application – Formulaire de contact</h3>
+
                 <ol>
-                    <li>Créer une fenêtre <code>JFrame</code> de taille 400x250.</li>
-                    <li>Ajouter 3 <code>JCheckBox</code> avec les textes : "Conditions", "Plitique", "Règles".</li>
-                    <li>Ajouter 2 <code>JRadioButton</code> : "Marocain(e)", "Autre".</li>
-                    <li>Modifier la couleur de fond et du texte pour chaque composant.</li>
-                    <li>Définir l’état sélectionné par défaut avec <code>setSelected(true/false)</code>.</li>
-                    <li>Organiser les composants dans un <code>JPanel</code> avec <code>FlowLayout</code>.</li>
+                    <li>Créer une fenêtre <code>JFrame</code> intitulée <strong>"Formulaire de Contact"</strong>
+                        de taille <code>500x600</code> et avec un <code>FlowLayout</code> ou un <code>GridLayout</code>.
+                    </li>
+
+                    <li>Créer un <code>JPanel</code> principal pour contenir tous les composants.
+                        - Définir sa taille avec <code>setPreferredSize()</code>.
+                        - Ajouter un <code>Border</code> ou <code>EmptyBorder</code> pour espacer les éléments.</li>
+
+                    <li>Ajouter les champs suivants dans des <code>JPanel</code> séparés si nécessaire :
+                        <ul>
+                            <li><strong>Nom :</strong> <code>JLabel</code> + <code>JTextField</code></li>
+                            <li><strong>Prénom :</strong> <code>JLabel</code> + <code>JTextField</code></li>
+                            <li><strong>Email :</strong> <code>JLabel</code> + <code>JTextField</code></li>
+                            <li><strong>Genre :</strong> 2 <code>JRadioButton</code> ("Homme", "Femme") dans un
+                                <code>ButtonGroup</code></li>
+                            <li><strong>Intérêts :</strong> 3 <code>JCheckBox</code> ("Sports", "Musique", "Voyage")
+                            </li>
+                            <li><strong>Message :</strong> <code>JLabel</code> + <code>JTextField</code> ou
+                                </li>
+                        </ul>
+                    </li>
+
+                    <li>Ajouter un <code>JButton</code> "Envoyer" et un autre "Annuler" en bas du formulaire.</li>
+
+                    <li>Pour chaque panel ou composant :
+                        <ul>
+                            <li>Définir la couleur de fond avec <code>setBackground(Color)</code></li>
+                            <li>Définir la couleur du texte avec <code>setForeground(Color)</code></li>
+                            <li>Ajouter des marges avec <code>setBorder(new EmptyBorder(...))</code></li>
+                            <li>Définir la taille préférée avec <code>setPreferredSize()</code> pour les JTextField et
+                                JTextArea</li>
+                        </ul>
+                    </li>
+
+                    <li>Organiser les panels pour que le formulaire soit lisible et centré dans la fenêtre.</li>
+
+                    <li>💡 Astuce :
+                        <ul>
+                            <li>Utiliser <code>FlowLayout</code> pour centrer les panels dans la JFrame</li>
+                            <li>Utiliser <code>GridLayout</code> à l’intérieur des panels pour aligner les labels et
+                                champs</li>
+                            <li>Mettre un <code>Border</code> ou un <code>TitledBorder</code> pour chaque section pour
+                                un design soigné</li>
+                            <li>Pour les boutons, utiliser <code>setPreferredSize(new Dimension(100,30))</code> et
+                                <code>setMargin(new Insets(5,10,5,10))</code></li>
+                        </ul>
+                    </li>
                 </ol>
-                <p>💡 Astuce : utilisez <code>setPreferredSize()</code> pour donner des dimensions aux panels et <code>setBorder(new EmptyBorder(...))</code> pour espacer les composants.</p>
+
+                <p>⚠️ Important : Cet exercice se concentre sur **la structure et l’organisation des composants**. Les
+                    événements (clics, validations) seront ajoutés dans un chapitre ultérieur.</p>
+            </div>
+
+            <div class="" style="display: flex; justify-content: center;">
+                <div class="">
+                    <img src="../assets/contcat-form.png" width="400" height="500" alt="">
+                </div>
             </div>
 
         </main>
