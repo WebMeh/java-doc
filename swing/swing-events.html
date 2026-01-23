@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Java pour Débutants - Swing Events</title>
+    <title>Événements en Swing</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -15,145 +15,215 @@
         <aside class="sidebar">
             <h2>Java</h2>
             <ul>
-                <li><a href="../index.html">Introduction</a></li>
-                <li><a href="../chapitre1.html">Bases Java</a></li>
-                <li><a href="../chapitre2.html">Input / Output</a></li>
-                <li><a href="../chapitre3.html">Variables & Types</a></li>
-                <li><a href="../conditions.html">Conditions</a></li>
-                <li><a href="../boucles.html">Les boucles</a></li>
-                <li><a href="../tableaux.html">Tableaux</a></li>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
                 <li><a href="fonctions.html">Méthodes</a></li>
-                <li><a href="../oop.html">POO</a></li>
+                <li><a href="oop.html">POO</a></li>
 
-                <!-- Dropdown GUI Swing -->
+                <!-- GUI Swing -->
                 <li class="dropdown">
                     <span class="dropdown-title">GUI Swing ▾</span>
                     <ul class="dropdown-menu">
                         <li><a href="swing-intro.html">Introduction à Swing</a></li>
-                        <li><a href="swing-jframe.html">JFrame (Fenêtre)</a></li>
+                        <li><a href="swing-jframe.html">JFrame</a></li>
                         <li><a href="swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
                         <li><a href="swing-label-textfield.html">JLabel & JTextField</a></li>
                         <li><a href="swing-button.html">JButton</a></li>
                         <li><a href="swing-events.html" class="active">Événements</a></li>
-                        <li><a href="swing-layouts.html">Layouts</a></li>
-                        <li><a href="swing-dialog.html">JOptionPane</a></li>
-                        <li><a href="swing-login.html">Mini Projet : Login</a></li>
                     </ul>
                 </li>
-
             </ul>
         </aside>
 
         <!-- MAIN CONTENT -->
         <main class="content">
 
-            <h1>Événements Swing</h1>
+            <h1>Les événements en Swing</h1>
 
             <p>
-                En Java Swing, un <strong>événement</strong> est une action déclenchée par
-                l’utilisateur ou le système, comme cliquer sur un bouton, taper au clavier
-                ou fermer une fenêtre.
+                Une interface graphique n’est utile que si elle peut
+                <strong>réagir aux actions de l’utilisateur</strong>.
+                Ces actions sont appelées des <strong>événements</strong>.
             </p>
 
-            <h2>1️⃣ Les composants générant des événements</h2>
+            <h2>🔹 Qu’est-ce qu’un événement ?</h2>
+
+            <p>
+                Un événement est une action réalisée par l’utilisateur, par exemple :
+            </p>
+
             <ul>
-                <li><strong>JButton</strong> → clic sur le bouton</li>
-                <li><strong>JTextField</strong> → entrée de texte + touche Entrée</li>
-                <li><strong>JCheckBox</strong> → sélection / désélection</li>
-                <li><strong>JRadioButton</strong> → sélection d’option</li>
-                <li><strong>JComboBox</strong> → choix dans une liste déroulante</li>
+                <li>Cliquer sur un bouton</li>
+                <li>Cocher une case</li>
+                <li>Sélectionner un bouton radio</li>
+                <li>Écrire dans un champ texte</li>
             </ul>
 
-            <h2>2️⃣ L’interface ActionListener</h2>
+            <div class="note">
+                <strong>Important :</strong>
+                Sans événements, une interface graphique ne fait rien.
+            </div>
+
+            <h2>🔹 Principe général</h2>
+
             <p>
-                Pour gérer un événement de clic sur un bouton, on utilise l’interface
-                <code>ActionListener</code>. Elle possède une seule méthode :
+                En Swing, le fonctionnement est toujours le même :
             </p>
 
-            <pre><code>void actionPerformed(ActionEvent e)</code></pre>
+            <ol>
+                <li>L’utilisateur effectue une action</li>
+                <li>Le composant détecte cette action</li>
+                <li>Le programme exécute du code en réponse</li>
+            </ol>
 
-            <p>Exemple simple :</p>
+            <p>
+                Pour écrire ce code de réaction, nous utilisons la forme suivante :
+            </p>
 
-            <pre><code>import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-
-JFrame frame = new JFrame("Exemple ActionListener");
-frame.setSize(300, 200);
-frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-frame.setLayout(new FlowLayout());
-
-JButton btnClick = new JButton("Cliquez-moi");
-
-// Ajouter un ActionListener
-btnClick.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(frame, "Vous avez cliqué sur le bouton !");
-    }
+            <pre><code>
+composant.addActionListener(e -> {
+    // code à exécuter
 });
+        </code></pre>
 
-frame.add(btnClick);
-frame.setVisible(true);
-</code></pre>
+            <h2>🔹 Exemple avec JButton</h2>
 
-            <h2>3️⃣ Tableau récapitulatif des événements</h2>
-            <table>
-                <tr>
-                    <th>Composant</th>
-                    <th>Événement</th>
-                    <th>Interface</th>
-                </tr>
-                <tr>
-                    <td>JButton</td>
-                    <td>Clic</td>
-                    <td>ActionListener</td>
-                </tr>
-                <tr>
-                    <td>JTextField</td>
-                    <td>Entrée texte + Enter</td>
-                    <td>ActionListener</td>
-                </tr>
-                <tr>
-                    <td>JCheckBox</td>
-                    <td>Check / Uncheck</td>
-                    <td>ItemListener</td>
-                </tr>
-                <tr>
-                    <td>JRadioButton</td>
-                    <td>Sélection</td>
-                    <td>ItemListener</td>
-                </tr>
-                <tr>
-                    <td>JComboBox</td>
-                    <td>Choix dans la liste</td>
-                    <td>ActionListener</td>
-                </tr>
-            </table>
+            <pre><code>
+JButton btn = new JButton("Cliquer");
+
+btn.addActionListener(e -> {
+    System.out.println("Bouton cliqué !");
+});
+        </code></pre>
+
+            <p>
+                Ici :
+            </p>
+            <ul>
+                <li><code>addActionListener</code> permet d’écouter l’action</li>
+                <li><code>e</code> représente l’événement déclenché</li>
+                <li>Le code s’exécute automatiquement au clic</li>
+            </ul>
+
+            <h2>🔹 Exemple avec JCheckBox</h2>
+
+            <pre><code>
+JCheckBox cb = new JCheckBox("Accepter les conditions");
+
+cb.addActionListener(e -> {
+    System.out.println("État changé");
+});
+        </code></pre>
+
+            <p>
+                Chaque fois que l’état de la case change (coché / décoché),
+                le code est exécuté.
+            </p>
+
+            <h2>🔹 Exemple avec JRadioButton</h2>
+
+            <pre><code>
+JRadioButton rbHomme = new JRadioButton("Homme");
+
+rbHomme.addActionListener(e -> {
+    System.out.println("Homme sélectionné");
+});
+        </code></pre>
+
+            <h2>🔹 Lire des valeurs depuis un champ texte</h2>
+
+            <pre><code>
+JTextField tfNom = new JTextField(15);
+JButton btnAfficher = new JButton("Afficher");
+
+btnAfficher.addActionListener(e -> {
+    String nom = tfNom.getText();
+    System.out.println(nom);
+});
+        </code></pre>
 
             <div class="note">
-                <strong>À retenir :</strong> Pour chaque événement, il faut :
-                <ol>
-                    <li>Choisir le composant</li>
-                    <li>Implémenter l’interface correspondante</li>
-                    <li>Écrire la méthode qui sera exécutée</li>
-                    <li>Attacher le listener au composant</li>
-                </ol>
+                <strong>À retenir :</strong>
+                Les événements permettent de récupérer les données saisies
+                par l’utilisateur.
             </div>
 
+
+
             <div class="exercice">
-                <h3>Exercice d'application :</h3>
+                <h3> Exercice – Formulaire de contact interactif</h3>
+
+                <p>
+                    <strong>Objectif :</strong>
+                    Rendre le formulaire de contact du chapitre précédent interactif
+                    en utilisant les événements Swing.
+                </p>
+
+                <p>
+                    <strong>Consigne :</strong>
+                    Reprenez le formulaire de contact que vous avez déjà créé
+                    (Nom, Prénom, Email, Sexe, Centres d’intérêt, Message, boutons).
+                    Ajoutez maintenant des <strong>événements</strong> aux boutons
+                    <strong>Valider</strong> et <strong>Annuler</strong>.
+                </p>
+
+                <h4>🔹 Bouton « Valider » : </h4>
                 <ol>
-                    <li>Créer une fenêtre <code>JFrame</code> de taille 300x200</li>
-                    <li>Ajouter un <code>JButton</code> intitulé "Cliquez-moi"</li>
-                    <li>Ajouter un <code>ActionListener</code> au bouton</li>
-                    <li>Dans <code>actionPerformed</code>, afficher un message avec
-                        <code>JOptionPane.showMessageDialog</code> indiquant
-                        "Vous avez cliqué sur le bouton !"</li>
-                    <li>Tester le bouton plusieurs fois</li>
+                    <li>Ajouter un événement sur le bouton <strong>Valider</strong>.</li>
+                    <li>Lors du clic :
+                        <ul>
+                            <li>Récupérer le texte des champs :
+                                <em>Nom, Prénom, Email et Message</em>.
+                            </li>
+                            <li>Déterminer le sexe sélectionné
+                                (<em>Homme</em> ou <em>Femme</em>).</li>
+                            <li>Vérifier les centres d’intérêt cochés.</li>
+                            <li>Afficher toutes les informations dans la console.</li>
+                        </ul>
+                    </li>
                 </ol>
-                <p>💡 Astuce : utilisez un <code>FlowLayout</code> pour centrer le bouton dans la fenêtre.</p>
+
+                <h4>🔹 Bouton « Annuler » : </h4>
+                <ol>
+                    <li>Ajouter un événement sur le bouton <strong>Annuler</strong>.</li>
+                    <li>Lors du clic :
+                        <ul>
+                            <li>Vider tous les champs texte.</li>
+                            <li>Vider la zone de message.</li>
+                            <li>Remettre le sexe par défaut à <strong>Homme</strong>.</li>
+                            <li>Décocher toutes les cases des centres d’intérêt.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h4>💡 Astuces</h4>
+                <ul>
+                    <li><code style="font-weight: bold; color: blue;">getText()</code>: permet de récupérer le contenu d’un champ texte.</li>
+                    <li><code style="font-weight: bold; color: blue;">setText("")</code>: permet de vider un champ.</li>
+                    <li><code style="font-weight: bold; color: blue;">isSelected()</code>: permet de vérifier si un bouton est coché.</li>
+                    <li><code style="font-weight: bold; color: blue;">setSelected(true / false)</code>: permet de modifier la sélection.</li>
+                    <li>Utiliser uniquement la forme :
+                        <pre><code>
+addActionListener(e -> {
+    // code à exécuter
+});
+            </code></pre>
+                    </li>
+                </ul>
+
+                <p>
+                    <strong>Résultat attendu :</strong><br>
+                    ✔ Le bouton <strong>Valider</strong> affiche les données du formulaire.<br>
+                    ✔ Le bouton <strong>Annuler</strong> réinitialise entièrement le formulaire.
+                </p>
             </div>
+
 
         </main>
 
