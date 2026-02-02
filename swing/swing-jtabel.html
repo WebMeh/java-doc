@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre – JTable (Tableaux en Swing)</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="../chapitre1.html">Bases Java</a></li>
+                <li><a href="../chapitre2.html">Input / Output</a></li>
+                <li><a href="../chapitre3.html">Variables & Types</a></li>
+                <li><a href="../conditions.html">Conditions</a></li>
+                <li><a href="../boucles.html">Les boucles</a></li>
+                <li><a href="../tableaux.html">Tableaux</a></li>
+                <li><a href="../fonctions.html">Méthodes</a></li>
+                <li><a href="../oop.html">POO</a></li>
+
+                <!-- GUI Swing -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing-jframe.html">JFrame</a></li>
+                        <li><a href="swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-label-textfield.html">JLabel & JTextField</a></li>
+                        <li><a href="swing-button.html">JButton</a></li>
+                        <li><a href="swing-events.html">Événements</a></li>
+                        <li><a href="swing-alerts.html">Boîtes de dialogue</a></li>
+                        <li><a href="swing-jtabel.html">Les tableaux</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="project1.html">Mini Projet 1</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1> Les Tableaux en Swing – JTable</h1>
+
+            <p>
+                Le composant <strong>JTable</strong> permet d’afficher des données sous forme de
+                lignes et colonnes, comme dans Excel.
+            </p>
+
+            <h2>1️⃣ Structure d’un JTable</h2>
+            <p>Un tableau Swing a besoin de :</p>
+            <ul>
+                <li>Les noms des colonnes</li>
+                <li>Les données (lignes du tableau)</li>
+            </ul>
+
+            <h3>Définir les colonnes</h3>
+            <pre><code>String[] colonnes = {"ID", "Nom", "Age"};</code></pre>
+
+            <h3>Définir les données</h3>
+            <pre><code>Object[][] donnees = {
+    {1, "Ali", 20},
+    {2, "Sara", 22},
+    {3, "Youssef", 19}
+};</code></pre>
+
+            <h2>2️⃣ Créer le JTable</h2>
+            <pre><code>JTable table = new JTable(donnees, colonnes);</code></pre>
+
+            <p>⚠️ Un JTable doit être placé dans un <strong>JScrollPane</strong> :</p>
+
+            <pre><code>JScrollPane scrollPane = new JScrollPane(table);</code></pre>
+
+            <h2>3️⃣ Exemple Complet</h2>
+
+            <pre><code>import javax.swing.*;
+
+public class TableauSimple {
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("Exemple JTable");
+        frame.setSize(500, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        String[] colonnes = {"ID", "Nom", "Age"};
+
+        Object[][] donnees = {
+            {1, "Ali", 20},
+            {2, "Sara", 22},
+            {3, "Youssef", 19}
+        };
+
+        JTable table = new JTable(donnees, colonnes);
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        frame.add(scrollPane);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+}</code></pre>
+
+            <h2>4️⃣ Lire une valeur du tableau</h2>
+
+            <pre><code>int ligne = table.getSelectedRow();
+int colonne = table.getSelectedColumn();
+
+Object valeur = table.getValueAt(ligne, colonne);
+System.out.println("Valeur sélectionnée : " + valeur);</code></pre>
+
+            <h2>5️⃣ Personnaliser le tableau</h2>
+
+            <h3>Changer la hauteur des lignes</h3>
+            <pre><code>table.setRowHeight(30);</code></pre>
+
+            <h3>Modifier la largeur des colonnes</h3>
+            <pre><code>table.getColumnModel().getColumn(0).setPreferredWidth(50);
+table.getColumnModel().getColumn(1).setPreferredWidth(150);
+table.getColumnModel().getColumn(2).setPreferredWidth(50);</code></pre>
+
+            <h2>6️⃣ Empêcher la modification des cellules</h2>
+
+            <pre><code>JTable table = new JTable(donnees, colonnes) {
+    public boolean isCellEditable(int row, int column) {
+        return false;
+    }
+};</code></pre>
+
+          
+
+            <p>💡 <strong>Astuce (Bonus) :</strong>
+                Permettez à l’utilisateur de cliquer sur une ligne du tableau et d’afficher le
+                <strong>prénom de l’élève sélectionné</strong> dans la console ou dans un JLabel.
+            </p>
+
+            <p><strong>Indications :</strong></p>
+            <ul>
+                <li>Utiliser <code>getSelectedRow()</code> pour récupérer la ligne choisie</li>
+                <li>Utiliser <code>getValueAt(ligne, colonne)</code> pour lire la valeur</li>
+                <li>La colonne <strong>Prénom</strong> correspond à son index (ex: 2)</li>
+            </ul>
+
+
+        </main>
+    </div>
+
+</body>
+
+</html>

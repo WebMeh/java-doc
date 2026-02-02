@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Boîtes de dialogue - Swing</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Java</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="oop.html">POO</a></li>
+
+                <!-- GUI Swing -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing-jframe.html">JFrame</a></li>
+                        <li><a href="swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-label-textfield.html">JLabel & JTextField</a></li>
+                        <li><a href="swing-button.html">JButton</a></li>
+                        <li><a href="swing-events.html">Événements</a></li>
+                        <li><a href="swing-alerts.html" class="active">Boîtes de dialogue</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1>Les alertes et boîtes de dialogue avec Swing</h1>
+
+            <p>
+                Swing permet d’afficher des fenêtres de message appelées
+                <strong>boîtes de dialogue</strong>.
+                Elles servent à informer l’utilisateur, poser une question
+                ou demander une saisie.
+            </p>
+
+            <h2>🔹 Classe utilisée : JOptionPane</h2>
+
+            <p>
+                Toutes les alertes simples en Swing sont gérées avec la classe :
+            </p>
+
+            <pre><code>JOptionPane</code></pre>
+
+            <div class="note">
+                <strong>Important :</strong> Une boîte de dialogue bloque le programme
+                jusqu’à ce que l’utilisateur réponde.
+            </div>
+
+            <h2>🔹 1. Message d'information</h2>
+
+            <pre><code>
+JOptionPane.showMessageDialog(null, "Opération réussie !");
+        </code></pre>
+
+            <p>
+                Affiche un message simple avec un bouton OK.
+            </p>
+
+            <h2>🔹 2. Message d’erreur</h2>
+
+            <pre><code>
+JOptionPane.showMessageDialog(null,
+    "Une erreur est survenue",
+    "Erreur",
+    JOptionPane.ERROR_MESSAGE);
+        </code></pre>
+
+            <h2>🔹 3. Message d’avertissement</h2>
+
+            <pre><code>
+JOptionPane.showMessageDialog(null,
+    "Attention à cette action",
+    "Avertissement",
+    JOptionPane.WARNING_MESSAGE);
+        </code></pre>
+
+            <h2>🔹 4. Boîte de confirmation (Oui / Non)</h2>
+
+            <pre><code>
+int choix = JOptionPane.showConfirmDialog(null,
+    "Voulez-vous continuer ?",
+    "Confirmation",
+    JOptionPane.YES_NO_OPTION);
+
+System.out.println(choix);
+        </code></pre>
+
+            <p>
+                Valeurs possibles :
+            </p>
+            <ul>
+                <li>0 → Oui</li>
+                <li>1 → Non</li>
+                <li>2 → Annuler</li>
+            </ul>
+
+
+
+
+
+            <p>
+                Cette boîte de dialogue permet de récupérer une valeur saisie.
+            </p>
+
+            <h2>🔹 Exemple complet avec bouton</h2>
+
+            <pre><code>
+JButton btn = new JButton("Envoyer");
+
+btn.addActionListener(e -> {
+    JOptionPane.showMessageDialog(null, "Message envoyé !");
+});
+        </code></pre>
+
+
+            <div class="exercice">
+                <h3>📝 Exercice (30–40 min) – Validation d’un formulaire avec Alertes</h3>
+
+                
+                <ol>
+                    <li>Prendre e formlaire du chapitre précédent.</li>
+                
+
+                    <li>Ajouter un <code>ActionListener</code> au bouton <strong>Valider</strong>.</li>
+
+                    <li>Quand on clique sur <strong>Valider</strong>, récupérer les valeurs :
+                        <ul>
+                            <li><code>JTextField</code> Nom</li>
+                            <li><code>JTextField</code> Email</li>
+                            <li><code>JTextField</code> Téléphone</li>
+                            <li><code>JTextArea</code> Message</li>
+                        </ul>
+                    </li>
+
+                    <li>Écrire des <strong>conditions</strong> pour vérifier les champs :</li>
+                </ol>
+
+                <h4 style="text-decoration: underline;"> Règles de validation :</h4>
+                <ul>
+                    <li>Si le <strong>Nom est vide</strong> → afficher une alerte d’erreur</li>
+                    <li>Si l’<strong>Email ne contient pas "@"</strong> → alerte d’erreur</li>
+                    <li>Si le <strong>Téléphone contient moins de 10 chiffres</strong> → alerte d’erreur</li>
+                    <li>Si le <strong>Message est vide</strong> → alerte d’erreur</li>
+                </ul>
+
+                <h4 style="text-decoration: underline;"> Types d’alertes à utiliser :</h4>
+                <ul>
+                    <li><code>JOptionPane.ERROR_MESSAGE</code> → pour les erreurs</li>
+                    <li><code>JOptionPane.INFORMATION_MESSAGE</code> → si tout est correct</li>
+                </ul>
+
+                <h4>✅ Si tous les champs sont corrects :</h4>
+                <p>Afficher une alerte :</p>
+                <p><em>"Message envoyé avec succès !"</em></p>
+
+                <h4 style="text-decoration: underline;"> Bouton Annuler :</h4>
+                <p>Quand on clique sur <strong>Annuler</strong> :</p>
+                <ul>
+                    <li>Vider tous les champs du formulaire</li>
+                    <li>Afficher une alerte : <em>"Formulaire réinitialisé"</em></li>
+                </ul>
+
+                <h4>💡 Méthodes utiles :</h4>
+                <ul>
+                    <li><code>textField.getText()</code></li>
+                    <li><code>textArea.getText()</code></li>
+                    <li><code>textField.setText("")</code></li>
+                    <li><code>JOptionPane.showMessageDialog(...)</code></li>
+                </ul>
+
+                
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
