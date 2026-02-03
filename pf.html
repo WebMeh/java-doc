@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projet 1 – Coupe d'Afrique des Nations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Projet finale</h2>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="chapitre1.html">Bases Java</a></li>
+                <li><a href="chapitre2.html">Input / Output</a></li>
+                <li><a href="chapitre3.html">Variables & Types</a></li>
+                <li><a href="chapitre3.html">Input / Output</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                <li><a href="boucles.html">Les boucles</a></li>
+                <li><a href="tableaux.html">Tableaux</a></li>
+                <li><a href="fonctions.html">Méthodes</a></li>
+                <li><a href="oop.html">POO</a></li>
+                <li><a href="project1.html">Mini Projet 1</a></li>
+                <!-- 🔽 DROPDOWN GUI SWING -->
+                <li class="dropdown">
+                    <span class="dropdown-title">GUI Swing ▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="swing/swing-intro.html">Introduction à Swing</a></li>
+                        <li><a href="swing/swing-jframe.html">JFrame (Fenêtre)</a></li>
+                        <li><a href="swing/swing-jpanel.html">JPanel</a></li>
+                        <li><a href="swing/swing-label-textfield.html">JLabel & JTextField</a></li>
+                        <li><a href="swing/swing-button.html">JButton</a></li>
+                        <li><a href="swing-events.html">Événements</a></li>
+                        <li><a href="swing-layouts.html">Layouts</a></li>
+                        <li><a href="swing-dialog.html">JOptionPane</a></li>
+                    </ul>
+                </li>
+
+                <!-- Projet final -->
+                 <li class="active"> <a href="/pf.html">Projt Final</a> </li>
+               
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <h1> Projet Final – Application Java Swing & SQLite</h1>
+
+            <p>
+                Ce projet marque la fin du module Java Swing. Vous allez développer une
+                <strong>application complète avec interface graphique</strong> connectée à une
+                <strong>base de données SQLite</strong>.
+            </p>
+
+            <p>
+                <strong>Important :</strong> Chaque groupe choisit son propre thème
+                (gestion d’élèves, bibliothèque, produits, employés, films, clients, etc.).
+                Le sujet est libre, mais la structure technique doit respecter les exigences ci-dessous.
+            </p>
+
+            <h2> Objectif Technique : </h2>
+            <p>
+                Créer une application capable de <strong>gérer des données</strong> :
+                ajouter, afficher, modifier et supprimer des informations stockées dans une base SQLite.
+            </p>
+            <h2> Programmation Orientée Objet (POO) : </h2>
+
+            <p>
+                Ce projet doit obligatoirement respecter les principes de la
+                <strong>programmation orientée objet</strong>.
+            </p>
+
+            <p><strong>Exigence minimale :</strong></p>
+            <ul>
+                <li>L’application doit contenir <strong>au moins 2 classes Java</strong>.</li>
+                <li>Une classe pour représenter les données (ex : Etudiant, Produit, Client…).</li>
+                <li>Une classe pour gérer l’interface graphique (JFrame).</li>
+            </ul>
+
+            <h3> Exemple d’organisation (à adapter selon votre thème)</h3>
+
+            <table cellpadding="6">
+                <tr>
+                    <th>Classe</th>
+                    <th>Rôle</th>
+                </tr>
+                <tr>
+                    <td>Model (ex: Etudiant.java)</td>
+                    <td>Contient les attributs (nom, prénom, etc.) </td>
+                </tr>
+                <tr>
+                    <td>Interface (ex: MainFrame.java)</td>
+                    <td>Contient le JFrame, les JPanel, les boutons et le JTable</td>
+                </tr>
+            </table>
+
+            <p>
+                💡 <strong>Bonus :</strong> Les groupes avancés peuvent ajouter une 3ème classe
+                pour la gestion de la base de données (DAO).
+            </p>
+
+
+            <h2> Fonctionnalités obligatoires : </h2>
+            <ul>
+                <li>Ajouter un enregistrement</li>
+                <li>Modifier un enregistrement</li>
+                <li>Supprimer un enregistrement</li>
+                <li>Afficher les données dans un JTable</li>
+                <li>Vider les champs du formulaire (bouton Annuler)</li>
+            </ul>
+
+            <h2> Interface Graphique Attendue :</h2>
+
+            <ul>
+                <li>Une fenêtre principale (JFrame)</li>
+                <li>Un formulaire de saisie (JLabel + JTextField ou autres composants)</li>
+                <li>Des boutons d’action :
+                    <ul>
+                        <li>Ajouter</li>
+                        <li>Modifier</li>
+                        <li>Supprimer</li>
+                        <li>Annuler</li>
+                    </ul>
+                </li>
+                <li>Un JTable pour afficher les données enregistrées</li>
+                <li>Une organisation propre avec des JPanel et des Layouts</li>
+            </ul>
+
+            <h2> Base de Données : </h2>
+
+            <p>
+                L’application doit utiliser <strong>SQLite</strong> pour stocker les données.
+                La table doit contenir :
+            </p>
+
+            <ul>
+                <li>Un identifiant (ID).</li>
+                <li>Au moins 3 autres champs selon votre thème.</li>
+            </ul>
+
+            <h2>Comportement attendu : </h2>
+
+            <table border="1" cellpadding="6">
+                <tr>
+                    <th>Action utilisateur</th>
+                    <th>Résultat attendu</th>
+                </tr>
+                <tr>
+                    <td>Clic sur Ajouter</td>
+                    <td>Les données sont enregistrées dans SQLite + tableau mis à jour</td>
+                </tr>
+                <tr>
+                    <td>Clic sur une ligne du tableau</td>
+                    <td>Les informations apparaissent dans le formulaire</td>
+                </tr>
+                <tr>
+                    <td>Clic sur Modifier</td>
+                    <td>Les données sont mises à jour dans la base</td>
+                </tr>
+                <tr>
+                    <td>Clic sur Supprimer</td>
+                    <td>L’enregistrement est supprimé de la base</td>
+                </tr>
+                <tr>
+                    <td>Clic sur Annuler</td>
+                    <td>Les champs du formulaire sont vidés</td>
+                </tr>
+            </table>
+
+            
+
+            <h2> Qualité de l’interface : </h2>
+            <ul>
+                <li>Interface claire et organisée</li>
+                <li>Utilisation correcte des Layouts</li>
+                <li>Espaces entre les composants</li>
+                <li>Design agréable (couleurs légères, alignement)</li>
+            </ul>
+
+            <h2> Résultat Final Attendu : </h2>
+
+            <p>À la fin, votre application doit :</p>
+            <ul>
+                <li>Fonctionner sans erreur.</li>
+                <li>Être connectée à une base SQLite.</li>
+                <li>Afficher et gérer les données dans un JTable.</li>
+                <li>Avoir une interface professionnelle.</li>
+            </ul>
+
+            
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
